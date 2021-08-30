@@ -13,6 +13,7 @@ Compose file: [httpd-php-dev.yml](docker-compose/httpd-php-dev.yml)
 ```sh
 SOURCE=/Users/rodolfo/git/chevereto/v3 \
 docker-compose \
+    -p chevereto-v3-dev \
     -f docker-compose/httpd-php-dev.yml \
     up
 ```
@@ -24,7 +25,7 @@ docker-compose \
 Run this command from the Docker host:
 
 ```sh
-docker exec -it chv-dev-bootstrap \
+docker exec -it chevereto-v3-dev_bootstrap \
     bash /var/www/sync.sh
 ```
 
@@ -35,11 +36,11 @@ docker exec -it chv-dev-bootstrap \
 Use `composer` to manage dependencies.
 
 ```sh
-docker exec -t chv-dev-bootstrap \
+docker exec -t chevereto-v3-dev_bootstrap \
     composer install
 ```
 
 ```sh
-docker exec -t chv-dev-bootstrap \
+docker exec -t chevereto-v3-dev_bootstrap \
     composer update
 ```
