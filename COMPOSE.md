@@ -11,4 +11,4 @@ docker-compose \
     up
 ```
 
-[localhost:8008](http://localhost:8008)
+[localhost:8830](http://localhost:8830)

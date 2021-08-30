@@ -17,7 +17,7 @@ docker-compose \
     up
 ```
 
-[localhost:8009](http://localhost:8009)
+[localhost:8930](http://localhost:8930)
 
 ## Sync with application code
 
