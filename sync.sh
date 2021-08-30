@@ -3,7 +3,7 @@ set -e
 rsync -r -I -og \
     --chown=www-data:www-data \
     --info=progress2 \
-    --exclude 'app/settings.php' \
     --exclude '.git' \
-    --exclude '.gitignore' \
+    --exclude 'app/vendor' \
+    --exclude 'app/settings.php' \
     /var/www/chevereto/ /var/www/html/
