@@ -20,6 +20,16 @@ docker-compose \
 
 [localhost:8930](http://localhost:8930)
 
+* Clear volumes
+
+```sh
+SOURCE=/Users/rodolfo/git/chevereto/v3 \
+docker-compose \
+    -p chevereto-v3-dev \
+    -f docker-compose/httpd-php-dev.yml \
+    down --volumes
+```
+
 ## Sync with application code
 
 Run this command from the Docker host:
@@ -36,11 +46,11 @@ docker exec -it chevereto-v3-dev_bootstrap \
 Use `composer` to manage dependencies.
 
 ```sh
-docker exec -t chevereto-v3-dev_bootstrap \
+docker exec -it --user www-data chevereto-v3-dev_bootstrap \
     composer install
 ```
 
 ```sh
-docker exec -t chevereto-v3-dev_bootstrap \
+docker exec -it --user www-data chevereto-v3-dev_bootstrap \
     composer update
 ```
