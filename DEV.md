@@ -11,7 +11,7 @@ Compose file: [httpd-php-dev.yml](docker-compose/httpd-php-dev.yml)
 * `SOURCE` is the absolute path to the chevereto source project.
 
 ```sh
-SOURCE=/Users/rodolfo/git/chevereto/v3 \
+SOURCE=~/git/chevereto/v3 \
 docker-compose \
     -p chevereto-v3-dev \
     -f docker-compose/httpd-php-dev.yml \
@@ -23,7 +23,7 @@ docker-compose \
 * Clear volumes
 
 ```sh
-SOURCE=/Users/rodolfo/git/chevereto/v3 \
+SOURCE=~/git/chevereto/v3 \
 docker-compose \
     -p chevereto-v3-dev \
     -f docker-compose/httpd-php-dev.yml \
