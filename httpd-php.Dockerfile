@@ -72,6 +72,8 @@ ENV CHEVERETO_SOFTWARE=$CHEVERETO_SOFTWARE \
     CHEVERETO_ASSET_STORAGE_ACCOUNT_ID= \
     CHEVERETO_ASSET_STORAGE_ACCOUNT_NAME= 
 
+COPY vhost.conf /etc/apache2/sites-available/000-default.conf
+
 RUN set -eux; \
     { \
     echo "log_errors = On"; \
