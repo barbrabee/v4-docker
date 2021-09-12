@@ -39,8 +39,6 @@ docker exec -it chevereto-v3-dev_bootstrap \
     bash /var/www/sync.sh
 ```
 
-> TIP: press up arrow key to call the command again.
-
 ## Composer
 
 Use `composer` to manage dependencies.
