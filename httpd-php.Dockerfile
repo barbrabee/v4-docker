@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     libgd-dev \
     libzip-dev \
     zip \
+    unzip \
     imagemagick libmagickwand-dev --no-install-recommends \
     && docker-php-ext-configure gd \
     --with-freetype=/usr/include/ \
@@ -28,7 +29,7 @@ RUN apt-get install -y \
 
 ARG CHEVERETO_SOFTWARE=chevereto
 ARG CHEVERETO_TAG=3.20.12
-ARG CHEVERETO_INSTALLER_TAG=2.3.0
+ARG CHEVERETO_INSTALLER_TAG=3.0.0
 ARG CHEVERETO_SERVICING=docker
 
 ENV CHEVERETO_SOFTWARE=$CHEVERETO_SOFTWARE \
