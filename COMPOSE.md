@@ -13,7 +13,7 @@ LICENSE=yourLicenseKey \
 docker-compose \
     -p chevereto-v3 \
     -f docker-compose/httpd-php.yml \
-    up
+    up --abort-on-container-exit
 ```
 
 [localhost:8830](http://localhost:8830)
