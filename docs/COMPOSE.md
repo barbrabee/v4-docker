@@ -1,18 +1,18 @@
 # Compose
 
-Compose file: [httpd-php.yml](docker-compose/httpd-php.yml)
+Compose file: [httpd-php.yml](../httpd-php.yml)
 
 ## Up
 
-* `LICENSE` your [Chevereto license key](https://chevereto.com/pricing).
+* `YOUR_V3_LICENSE_KEY` your [Chevereto license](https://chevereto.com/panel/license) key.
 
 Run this command to spawn (start) Chevereto.
 
 ```sh
-LICENSE=yourLicenseKey \
+LICENSE=YOUR_V3_LICENSE_KEY \
 docker-compose \
     -p chevereto-v3 \
-    -f docker-compose/httpd-php.yml \
+    -f httpd-php.yml \
     up --abort-on-container-exit
 ```
 
@@ -25,7 +25,7 @@ Run this command to stop Chevereto.
 ```sh
 docker-compose \
     -p chevereto-v3 \
-    -f docker-compose/httpd-php.yml \
+    -f httpd-php.yml \
     stop
 ```
 
@@ -36,6 +36,6 @@ Run this command to down Chevereto (stop containers, remove networks and volumes
 ```sh
 docker-compose \
     -p chevereto-v3 \
-    -f docker-compose/httpd-php.yml \
+    -f httpd-php.yml \
     down --volumes
 ```
