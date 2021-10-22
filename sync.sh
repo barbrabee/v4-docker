@@ -23,7 +23,6 @@ inotifywait \
     --format "%e %w%f" \
     --exclude $EXCLUDE \
     --monitor \
-    --quiet \
     --recursive \
     $SOURCE |
     while read CHANGED; do
