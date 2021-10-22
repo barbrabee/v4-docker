@@ -1,13 +1,13 @@
 version: "3.2"
 
 services:
-  chv-database:
+  database:
     container_name: chevereto-v3_database
     image: mariadb:focal
     networks:
-      - chv-network
+      - chevereto
     volumes:
-      - chv-data:/var/lib/mysql
+      - database:/var/lib/mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password
@@ -19,18 +19,18 @@ services:
     container_name: chevereto-v3_bootstrap
     image: ghcr.io/chevereto/httpd-php:3.20
     networks:
-      - chv-network
+      - chevereto
     volumes:
-      - chv-storage:/var/www/html/images/
-      - chv-assets:/var/www/html/_assets/
-      - chv-app:/var/www/html/
+      - storage:/var/www/html/images/
+      - assets:/var/www/html/_assets/
+      - app:/var/www/html/
     ports:
       - 8830:80
     restart: always
     environment:
       CHEVERETO_TAG: "3.20"
       CHEVERETO_LICENSE: ${LICENSE}
-      CHEVERETO_DB_HOST: chv-database
+      CHEVERETO_DB_HOST: database
       CHEVERETO_DB_USER: chevereto
       CHEVERETO_DB_PASS: user_database_password
       CHEVERETO_DB_PORT: 3306
@@ -41,10 +41,10 @@ services:
       CHEVERETO_ASSET_STORAGE_BUCKET: /var/www/html/_assets/
 
 volumes:
-  chv-data:
-  chv-assets:
-  chv-storage:
-  chv-app:
+  database:
+  assets:
+  storage:
+  app:
 
 networks:
-  chv-network:
+  chevereto:
