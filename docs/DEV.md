@@ -80,9 +80,9 @@ We use [composer](https://getcomposer.org) to manage dependencies.
 Run this command to provide the vendor dependencies.
 
 ```sh
-docker exec -it \
+docker exec --user www-data -it \
     chevereto-v3-dev_bootstrap \
-    composer update
+    composer install
 ```
 
 ## Logs
@@ -106,7 +106,7 @@ Chevereto application commands must run under `www-data` user.
 Run the command below to execute `-C` CLI commands.
 
 ```sh
-docker exec --user www-data \
-    -it chevereto-v3-dev_bootstrap \
+docker exec --user www-data -it \
+    chevereto-v3-dev_bootstrap \
     php cli.php -C cron
 ```
