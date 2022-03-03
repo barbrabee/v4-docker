@@ -82,7 +82,7 @@ Run this command to provide the vendor dependencies.
 ```sh
 docker exec --user www-data -it \
     chevereto-v3-dev_bootstrap \
-    composer install
+    composer install --ignore-platform-reqs
 ```
 
 ## Logs
